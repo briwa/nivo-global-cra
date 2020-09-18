@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ResponsiveBar } from "@nivo/bar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const styles = {
+  fontFamily: "sans-serif",
+  textAlign: "center"
+};
+
+const data = [
+  { quarter: 1, earnings: 13000 },
+  { quarter: 2, earnings: 16500 },
+  { quarter: 3, earnings: 14250 },
+  { quarter: 4, earnings: 19000 }
+];
+
+const App = () => (
+  <div style={styles}>
+    <h1>Nivo basic demo</h1>
+    <div style={{ height: "400px" }}>
+      <ResponsiveBar data={data} keys={["earnings"]} indexBy="quarter" />
     </div>
-  );
-}
+  </div>
+)
 
-export default App;
+export default App
